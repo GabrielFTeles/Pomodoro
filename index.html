@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akshar:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/67aa33abf6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Time for a break!</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Pomofocus</h1>
+        <ul>
+          <li>Report</li>
+          <li>Setting</li>
+          <li>Login</li>
+        </ul>
+      </div>
+      <div class="bar"></div>
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="timer">
+          <div class="options">
+            <ul>
+              <li class="active" onclick="optionClick(1)">Pomodoro</li>
+              <li onclick="optionClick(2)">Short Break</li>
+              <li onclick="optionClick(3)">Long Break</li>
+            </ul>
+          </div>
+          <div class="time">
+            <span>25:00</span>
+          </div>
+          <div class="sound">
+            <i class="fa-solid fa-volume-high"></i>
+          </div>
+          <div class="start">
+            <button>START</button>
+          </div>
+        </div>
+        <div class="option-title">
+          <p>#1</p>
+          <h2>Time to focus!</h2>
+        </div>
+        <div class="tasks-header">
+          <div class="left-section">
+            <span>Tasks</span>
+          </div>
+          <div class="right-section">
+            <span
+              onclick="taskFilterClick('pending', event.target)"
+              id="pending"
+              >Pending</span
+            >
+            <span
+              onclick="taskFilterClick('finished', event.target)"
+              id="finished"
+              >Finished</span
+            >
+            <span id="menu"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+          </div>
+          <div class="modal">
+            <ul>
+              <li><i class="fa-solid fa-trash-can"></i>Clear finished tasks</li>
+              <li><i class="fa-solid fa-check"></i>Clear act pomodoros</li>
+              <li><i class="fa-solid fa-floppy-disk"></i>Save as template</li>
+              <li><i class="fa-solid fa-plus"></i>Add from templates</li>
+              <li>
+                <hr />
+                <span>
+                  <i class="fa-solid fa-trash-can"></i>
+                  Clear all tasks
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="tasks">
+          <div class="new-task">
+            <img src="./icons/plus-circle-white.png" alt="" />
+            <span>Add Task</span>
+          </div>
+          <div class="add-task">
+            <input
+              type="text"
+              name="text"
+              id="text"
+              placeholder="What are you working on?"
+              autocomplete="off"
+            />
+            <textarea
+              name="textArea"
+              id="textArea"
+              placeholder="Some notes about ...."
+            ></textarea>
+            <div class="add-task-footer">
+              <span id="cancel-task">Cancel</span>
+              <button id="save-task" disabled>Save</button>
+            </div>
+          </div>
+          <div class="tasksList"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+  <script src="script.js"></script>
+</html>
