@@ -44,17 +44,17 @@ function optionClick(wich) {
         }
     })
 
-    if (wich === 1) {
+    if (wich === 'pomodoro') {
         option1.classList.toggle('active');
         actualOption = 1;
         onOptionChange('#d95550', '25:00', 'Time to focus!', 25)
     }
-    if (wich === 2) {
+    if (wich === 'short-break') {
         option2.classList.toggle('active');
         actualOption = 2;
         onOptionChange('#4c9195', '05:00', 'Time for a break!', 5)
     }
-    if (wich === 3) {
+    if (wich === 'long-break') {
         option3.classList.toggle('active');
         actualOption = 3;
         onOptionChange('#457ca3', '15:00', 'Time for a break!', 15)
@@ -234,9 +234,9 @@ function timer() {
             clearInterval(interval);
             setTimeout(() => {
                 if (actualOption != 1) {
-                    optionClick(1);
+                    optionClick('pomodoro');
                 } else {
-                    optionClick(2);
+                    optionClick('short-break');
                 }
             }, 2000)
             return;
